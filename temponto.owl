@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="temponto.owl/temponto.owl/temponto.owl"
+         xmlns="temponto.owl/temponto.owl/temponto.owl#">
+
+<owl:Ontology rdf:about="temponto.owl/temponto.owl/temponto.owl"/>
+
+<owl:ObjectProperty rdf:about="temponto.owl/temponto.owl#performsConversion">
+  <rdfs:domain rdf:resource="temponto.owl/temponto.owl#Student"/>
+  <rdfs:range rdf:resource="temponto.owl/temponto.owl#Conversion"/>
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="temponto.owl/temponto.owl#actsOnTemperature">
+  <rdfs:domain rdf:resource="temponto.owl/temponto.owl#Conversion"/>
+  <rdfs:range rdf:resource="temponto.owl/temponto.owl#Temperature"/>
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="temponto.owl/temponto.owl#generatesResult">
+  <rdfs:domain rdf:resource="temponto.owl/temponto.owl#Conversion"/>
+  <rdfs:range rdf:resource="temponto.owl/temponto.owl#History"/>
+  <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#performsConversion">
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:range rdf:resource="#Conversion"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#actsOnTemperature">
+  <rdfs:domain rdf:resource="#Conversion"/>
+  <rdfs:range rdf:resource="#Temperature"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#generatesResult">
+  <rdfs:domain rdf:resource="#Conversion"/>
+  <rdfs:range rdf:resource="#History"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="temponto.owl/temponto.owl#name">
+  <rdfs:domain rdf:resource="temponto.owl/temponto.owl#Student"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#name">
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#content">
+  <rdfs:domain rdf:resource="#Quote"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="temponto.owl/temponto.owl#Student">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="temponto.owl/temponto.owl#Conversion">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="temponto.owl/temponto.owl#Temperature">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="temponto.owl/temponto.owl#History">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="temponto.owl/temponto.owl#Celsius">
+  <rdfs:subClassOf rdf:resource="temponto.owl/temponto.owl#Temperature"/>
+</owl:Class>
+
+<owl:Class rdf:about="temponto.owl/temponto.owl#Fahrenheit">
+  <rdfs:subClassOf rdf:resource="temponto.owl/temponto.owl#Temperature"/>
+</owl:Class>
+
+<owl:Class rdf:about="temponto.owl/temponto.owl#Kelvin">
+  <rdfs:subClassOf rdf:resource="temponto.owl/temponto.owl#Temperature"/>
+</owl:Class>
+
+<owl:Class rdf:about="temponto.owl/temponto.owl#ToCelsius">
+  <rdfs:subClassOf rdf:resource="temponto.owl/temponto.owl#Conversion"/>
+</owl:Class>
+
+<owl:Class rdf:about="temponto.owl/temponto.owl#ToFahrenheit">
+  <rdfs:subClassOf rdf:resource="temponto.owl/temponto.owl#Conversion"/>
+</owl:Class>
+
+<owl:Class rdf:about="temponto.owl/temponto.owl#ToKelvin">
+  <rdfs:subClassOf rdf:resource="temponto.owl/temponto.owl#Conversion"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://www.example.com/temponto.owl#Quote">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Student">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Temperature">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Celsius">
+  <rdfs:subClassOf rdf:resource="#Temperature"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Fahrenheit">
+  <rdfs:subClassOf rdf:resource="#Temperature"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Kelvin">
+  <rdfs:subClassOf rdf:resource="#Temperature"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Conversion">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ToCelsius">
+  <rdfs:subClassOf rdf:resource="#Conversion"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ToFahrenheit">
+  <rdfs:subClassOf rdf:resource="#Conversion"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ToKelvin">
+  <rdfs:subClassOf rdf:resource="#Conversion"/>
+</owl:Class>
+
+<owl:Class rdf:about="#History">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Quote">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="temponto.owl/temponto.owl#aashish">
+  <rdf:type rdf:resource="temponto.owl/temponto.owl#Student"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="temponto.owl/temponto.owl#student2">
+  <rdf:type rdf:resource="temponto.owl/temponto.owl#Student"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="temponto.owl/temponto.owl#Milan">
+  <rdf:type rdf:resource="temponto.owl/temponto.owl#Student"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="temponto.owl/temponto.owl#Dipak">
+  <rdf:type rdf:resource="temponto.owl/temponto.owl#Student"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="temponto.owl/temponto.owl#history1">
+  <rdf:type rdf:resource="temponto.owl/temponto.owl#History"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="temponto.owl/temponto.owl#history2">
+  <rdf:type rdf:resource="temponto.owl/temponto.owl#History"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.example.com/temponto.owl#quote1">
+  <rdf:type rdf:resource="http://www.example.com/temponto.owl#Quote"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"The only way to do great work is to love what you do." – Steve Jobs</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.example.com/temponto.owl#quote2">
+  <rdf:type rdf:resource="http://www.example.com/temponto.owl#Quote"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"Success is not the key to happiness. Happiness is the key to success." – Albert Schweitzer</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="temponto.owl/temponto.owl#history3">
+  <rdf:type rdf:resource="temponto.owl/temponto.owl#History"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#history1">
+  <rdf:type rdf:resource="#History"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

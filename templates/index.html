@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITS for Temperature conversion</title>
+    <style>
+        /* Overall Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #6a0dad; /* Purple background */
+            color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Container Box */
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.8); /* White with slight transparency */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px); /* Blurred background effect */
+        }
+
+        /* Header Styling */
+        h1, h2 {
+            text-align: center;
+            color: black;
+        }
+
+        /* Form Elements */
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #6a0dad;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4b0082; /* Darker purple on hover */
+        }
+
+        .quote {
+            margin-top: 20px;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Single Form for Student Name and Temperature Conversion -->
+        <h1>Intelligent Tutoring System for Temperature Conversion</h1>
+        <form method="POST" action="{{ url_for('convert_temperature_route') }}">
+            <!-- Student Name Input -->
+            <label for="student_name">Student Name:</label>
+            <input type="text" id="student_name" name="student_name" required>
+
+            <!-- Temperature Input -->
+            <label for="temperature_value">Enter Temperature:</label>
+            <input type="number" id="temperature_value" name="temperature_value" required>
+
+            <!-- Temperature Conversion Units -->
+            <label for="from_unit">From Unit:</label>
+            <select id="from_unit" name="from_unit">
+                <option value="Celsius">Celsius</option>
+                <option value="Fahrenheit">Fahrenheit</option>
+                <option value="Kelvin">Kelvin</option>
+            </select>
+
+            <label for="to_unit">To Unit:</label>
+            <select id="to_unit" name="to_unit">
+                <option value="Celsius">Celsius</option>
+                <option value="Fahrenheit">Fahrenheit</option>
+                <option value="Kelvin">Kelvin</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if conversion_result %}
+        <!-- Display Student Name -->
+<p><strong>Student Name:</strong> {{ student_name }}</p>
+
+        <h2>Conversion Result</h2>
+        <p>Converted Temperature: {{ conversion_result }}</p>
+        <p class="quote">Quote: {{ quote }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
